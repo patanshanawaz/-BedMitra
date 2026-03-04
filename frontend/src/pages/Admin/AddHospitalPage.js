@@ -1,3 +1,4 @@
+//addhospitalpage
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { hospitalAPI, authAPI } from '../../services/api';
@@ -17,7 +18,6 @@ export default function AddHospitalPage() {
   useEffect(() => { hospitalAPI.getCities().then(r=>setCities(r.data.data)).catch(()=>{}); }, []);
 
   const set = (k,v) => setForm(p=>({...p,[k]:v}));
-
   const handleCreateHospital = async (e) => {
     e.preventDefault();
     setLoading(true);
